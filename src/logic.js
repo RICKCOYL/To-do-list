@@ -1,8 +1,5 @@
-export function Task(title, description, dueDate, priority) {
+export function Task(title) {
   this.title = title;
-  this.description = description;
-  this.dueDate = dueDate;
-  this.priority = priority;
 }
 
 export function Project(title, description, dueDate) {
@@ -15,28 +12,19 @@ export function Project(title, description, dueDate) {
   };
 }
 
-export function processNewProjectForm() {
+export const processNewProjectForm = () => {
   const newProjectTitle = document.getElementById('project-input-title').value;
-  const newProjectDescription = document.getElementById(
-    'project-input-description',
-  ).value;
-  const newProjectDueDate = document.getElementById('project-input-date').value;
+
 
   document.getElementById('project-input-title').value = '';
-  document.getElementById('project-input-description').value = '';
-  document.getElementById('project-input-date').value = '';
 
-  const newProject = new Project(
-    newProjectTitle,
-    newProjectDescription,
-    newProjectDueDate,
-  );
+  const newProject = new Project(newProjectTitle);
   const projectsList = JSON.parse(localStorage.getItem('projects')) || [];
   projectsList.push(newProject);
   localStorage.setItem('projects', JSON.stringify(projectsList));
-}
+};
 
-export function processNewTaskForm() {
+export const processNewTaskForm = () => {
   const newTaskTitle = document.getElementById('task-input-title').value;
   const newTaskDescription = document.getElementById(
     'task-input-description',
@@ -75,4 +63,4 @@ export function processNewTaskForm() {
 
   localStorage.setItem('projects', JSON.stringify(projectsList));
   localStorage.setItem('selected project', JSON.stringify(projectsList[selectedProjectIndex]));
-}
+};

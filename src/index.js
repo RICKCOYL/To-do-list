@@ -1,5 +1,5 @@
 import 'bootstrap/js/dist/collapse';
-import './style/style.scss';
+import './components/style.scss';
 
 import domModule from './dom';
 import {
@@ -9,7 +9,7 @@ import {
 } from './logic';
 
 
-import { updateLocalStorage } from './helpers';
+import { updateLocalStorage } from './module';
 
 document
   .getElementById('submit-task-form-button')

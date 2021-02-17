@@ -1,4 +1,4 @@
-export function createContent(contentObj) {
+export const createContent = (contentObj) => {
   if (contentObj.element === null) {
     return null;
   }
@@ -43,7 +43,7 @@ export function createContent(contentObj) {
     }
   });
   return output;
-}
+};
 
 export function updateLocalStorage(newInfoArray) {
   newInfoArray.forEach(subArray => {

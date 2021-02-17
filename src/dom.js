@@ -1,5 +1,5 @@
 import 'bootstrap/js/dist/collapse';
-import { createContent, updateLocalStorage } from './helpers';
+import { createContent, updateLocalStorage } from './module';
 
 const domModule = {
   populateList: (listDestination, listArray, displayFunction) => {
