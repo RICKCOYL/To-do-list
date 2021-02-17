@@ -4,7 +4,7 @@ import './components/style.scss';
 import domModule from './dom';
 import {
   Project,
-  processNewProjectForm,
+  ProjectForm,
   processNewTaskForm,
 } from './logic';
 
@@ -25,7 +25,7 @@ document
 document
   .getElementById('submit-project-form-button')
   .addEventListener('click', () => {
-    processNewProjectForm();
+    ProjectForm();
     const projectsList = JSON.parse(localStorage.getItem('projects')) || [];
     const projectsColumn = document.querySelector('.project-list');
 

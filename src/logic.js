@@ -1,18 +1,7 @@
-export function Task(title, description, dueDate) {
-  this.title = title;
-  this.description = description;
-  this.dueDate = dueDate;
-}
+import Task from './taskconstructor';
+import Project from './projectconstructor';
 
-export function Project(title) {
-  this.title = title;
-  this.tasks = [];
-  this.addTask = (newTask) => {
-    this.tasks.push(newTask);
-  };
-}
-
-export const processNewProjectForm = () => {
+const ProjectForm = () => {
   const ProjectTitle = document.getElementById('projectTitle').value;
 
   const projectInput = document.getElementById('projectTitle');
@@ -24,7 +13,7 @@ export const processNewProjectForm = () => {
   localStorage.setItem('projects', JSON.stringify(projectsList));
 };
 
-export const processNewTaskForm = () => {
+const TaskForm = () => {
   const newTaskTitle = document.getElementById('task-input-title').value;
   const newTaskDescription = document.getElementById(
     'task-input-description',
@@ -64,3 +53,5 @@ export const processNewTaskForm = () => {
   localStorage.setItem('projects', JSON.stringify(projectsList));
   localStorage.setItem('selected project', JSON.stringify(projectsList[selectedProjectIndex]));
 };
+
+export { ProjectForm, TaskForm };
