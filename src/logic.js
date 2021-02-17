@@ -1,11 +1,11 @@
-export function Task(title) {
-  this.title = title;
-}
-
-export function Project(title, description, dueDate) {
+export function Task(title, description, dueDate) {
   this.title = title;
   this.description = description;
   this.dueDate = dueDate;
+}
+
+export function Project(title) {
+  this.title = title;
   this.tasks = [];
   this.addTask = (newTask) => {
     this.tasks.push(newTask);
