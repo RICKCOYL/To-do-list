@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # To-Do List
 
 ![Hireable](https://img.shields.io/badge/Hireable-yes-success) ![](https://img.shields.io/badge/-Microverse%20projects-blueviolet)
@@ -46,3 +47,6 @@ If you've read this far....give us a ⭐️!
 ## 📝 License
 
 This project is licensed by Microverse and the Odin Project
+=======
+# To-do-list
+>>>>>>> 254d211b43b88a113ae1f80d3b9a6684fae05e69
