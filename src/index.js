@@ -1,26 +1,20 @@
 import 'bootstrap/js/dist/collapse';
 import './components/style.scss';
+import Project from './projectconstructor';
 
 import domModule from './dom';
-import {
-  Project,
-  ProjectForm,
-  processNewTaskForm,
-} from './logic';
+import { ProjectForm, TaskForm } from './logic';
 
 
 import { updateLocalStorage } from './module';
 
-document
-  .getElementById('submit-task-form-button')
-  .addEventListener('click', () => {
-    processNewTaskForm();
-
-    const tasksList = JSON.parse(localStorage.getItem('selected project')).tasks || [];
-    const tasksColumn = document.querySelector('.task-list');
-    domModule.populateList(tasksColumn, tasksList, domModule.displayTask);
-    document.getElementById('display-task-form-btn').click();
-  });
+document.getElementById('submit-task-form-button').addEventListener('click', () => {
+  TaskForm();
+  const tasksList = JSON.parse(localStorage.getItem('selected project')).tasks || [];
+  const tasksColumn = document.querySelector('.task-list');
+  domModule.populateList(tasksColumn, tasksList, domModule.displayTask);
+  document.getElementById('display-task-form-btn').click();
+});
 
 document
   .getElementById('submit-project-form-button')
