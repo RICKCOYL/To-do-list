@@ -13,12 +13,12 @@ export function Project(title, description, dueDate) {
 }
 
 export const processNewProjectForm = () => {
-  const newProjectTitle = document.getElementById('project-input-title').value;
+  const ProjectTitle = document.getElementById('projectTitle').value;
 
+  const projectInput = document.getElementById('projectTitle');
+  projectInput.value = '';
 
-  document.getElementById('project-input-title').value = '';
-
-  const newProject = new Project(newProjectTitle);
+  const newProject = new Project(ProjectTitle);
   const projectsList = JSON.parse(localStorage.getItem('projects')) || [];
   projectsList.push(newProject);
   localStorage.setItem('projects', JSON.stringify(projectsList));

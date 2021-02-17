@@ -162,7 +162,7 @@ const domModule = {
       classList: [
         'card',
         'my-2',
-        `${task.priority.toLowerCase()}-priority`,
+        `${task.priority}-priority`,
       ],
       children: [
         {
