@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 # To-Do List
 
 ![Hireable](https://img.shields.io/badge/Hireable-yes-success) ![](https://img.shields.io/badge/-Microverse%20projects-blueviolet)
 
 # Demo restaurant website built for the javascript module.
 
-> In this project, we were required to build a restaurant website where users can navigate on the other pages using tabs (without redirecting the browser on click).
+> In this project, we were required to build a restaurant website where users can navigate on the other pages using tab (without redirecting the browser on click).
 
 ## App functionality
 
@@ -47,6 +46,3 @@ If you've read this far....give us a ⭐️!
 ## 📝 License
 
 This project is licensed by Microverse and the Odin Project
-=======
-# To-do-list
->>>>>>> 254d211b43b88a113ae1f80d3b9a6684fae05e69
