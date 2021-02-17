@@ -10,6 +10,7 @@ import { updateLocalStorage } from './module';
 
 document.getElementById('submit-task-form-button').addEventListener('click', () => {
   TaskForm();
+
   const tasksList = JSON.parse(localStorage.getItem('selected project')).tasks || [];
   const tasksColumn = document.querySelector('.task-list');
   domModule.populateList(tasksColumn, tasksList, domModule.displayTask);
