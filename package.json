@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/epinczinger/to-do-list.git"
+    "url": "git+https://github.com/RICKCOYL/to-dolist.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/epinczinger/to-do-list/issues"
+    "url": "https://github.com/RICKCOYL/to-dolist/issues"
   },
-  "homepage": "https://github.com/epinczinger/to-do-list#readme",
+  "homepage": "https://github.com/RICKCOYL/to-dolist/blob/main/README.md",
   "devDependencies": {
     "@babel/preset-env": "^7.12.7",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
