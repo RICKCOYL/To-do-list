@@ -6,3 +6,17 @@
 .task-delete {
   width: 100px;
 }
+
+.aside {
+  background-color: rgb(105, 105, 110);
+  height: 100vh;
+}
+
+.form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.h3-p {
+  color: #fff;
+}

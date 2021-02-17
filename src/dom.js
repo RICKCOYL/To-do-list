@@ -79,8 +79,8 @@ const domModule = {
         },
         {
           element: 'button',
-          classList: ['btn', 'btn-secondary'],
-          textContent: '<i class="fas fa-trash"></i>',
+          classList: ['btn', 'btn-danger'],
+          textContent: 'delete',
           eventListeners: [
             [
               'click',

@@ -8,9 +8,9 @@
 </head>
 <body>
 
-    <div class="main container-fluid ">
+    <div class="main">
       <div id = "projects" class="aside">
-          <h3 class='column-title'>Projects</h3>
+          <h3 class="h3-p">Projects</h3>
           <button class="btn btn-info" id='display-form-btn' type="button" data-toggle="collapse" data-target="#project-form" aria-expanded="false" aria-controls="project-form">
             <i class="fas fa-plus"></i>
           </button>
@@ -25,44 +25,38 @@
         <div class="project-list"></div>
       </div>     
       
-      <div id = "tasks-column" class="content-column col-8">
+      <div id = "tasks-column" class="container-fluid">
           <h3 class='column-title'>Tasks</h3>
-          <button class="btn btn-primary" id='display-task-form-btn' type="button" data-toggle="collapse" data-target="#task-form" aria-expanded="false" aria-controls="task-form">
-            Add a new task
-          </button>
-        <form class='collapse' id='task-form'>
-            <div class="form-group">
-                <label>
-                  Title:
-                </label>
-                 <input type='text' class="form-control" id='task-input-title'></input>
-              </div>
-              <div class="form-group">
-                <label>
-                  Description:
-                </label>
-                <input type='text' class="form-control" id='task-input-description'></input>
-              </div>
-              <div class="form-group">
-                <label>
-                  Due Date:
-                </label>
-                <input type='date' class="form-control" id='task-input-date'></input>
-              </div>
-            <div class="form-group">
-                <label>
-                  Priority:
-                </label>
-                <select class="form-control" id="task-input-priority">
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                </select>
-            </div>
-            <button id="submit-task-form-button" class="btn btn-primary" type="button">Create Task!</button>
-        </form>
+          
+         
         <div class="task-list card-group"></div>
-
+        <div class="form">
+          <form class='collapse' id='task-form'>
+              <div class="form-grou m">
+                   <input type='text' class="form-control" id='task-input-title' placeholder=" Title"></input>
+                </div>
+                <div class="form-group">
+                  <input type='text' class="form-control" id='task-input-description' placeholder="Description"></input>
+                </div>
+                <div class="form-group">
+                  <input type='date' class="form-control" id='task-input-date' placeholder="Date"></input>
+                </div>
+              <div class="form-group">
+                  <label>
+                    Priority:
+                  </label>
+                  <select class="form-control" id="task-input-priority">
+                      <option>Low</option>
+                      <option>Medium</option>
+                      <option>High</option>
+                  </select>
+              </div>
+              <button id="submit-task-form-button" class="btn btn-primary" type="button">add Task!</button>
+          </form>
+        </div>
+        <button class="btn btn-primary" id='display-task-form-btn' type="button" data-toggle="collapse" data-target="#task-form" aria-expanded="false" aria-controls="task-form">
+          Add task
+        </button>
       </div>      
     </div>
     
