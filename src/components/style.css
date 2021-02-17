@@ -1,0 +1,8 @@
+.main {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.task-delete {
+  width: 100px;
+}

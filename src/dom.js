@@ -80,7 +80,7 @@ const domModule = {
         {
           element: 'button',
           classList: ['btn', 'btn-secondary'],
-          textContent: 'Delete Project',
+          textContent: '<i class="fas fa-trash"></i>',
           eventListeners: [
             [
               'click',
@@ -91,14 +91,6 @@ const domModule = {
             ],
           ],
         },
-        {
-          element: 'button',
-          classList: ['btn', 'btn-secondary'],
-          textContent: 'Edit Project',
-          type: 'button',
-          'data-toggle': 'collapse',
-          'data-target': `#edit-form-project-${uniqueIdentifier}`,
-        },
       ],
     });
 
@@ -107,16 +99,6 @@ const domModule = {
       const extraInfo = createContent({
         element: 'div',
         classList: ['extra-info'],
-        children: [
-          {
-            element: 'p',
-            textContent: `Description: ${project.description ? project.description : 'None'}`,
-          },
-          {
-            element: 'p',
-            textContent: `Due Date: ${project.dueDate ? project.dueDate : 'None'}`,
-          },
-        ],
       });
       previousElement.insertAdjacentElement('afterend', extraInfo);
     }
@@ -161,13 +143,12 @@ const domModule = {
       element: 'div',
       classList: [
         'card',
-        'my-2',
         `${task.priority}-priority`,
       ],
       children: [
         {
           element: 'h4',
-          classList: ['card-title', 'px-2', 'py-4'],
+          classList: ['card-title'],
           textContent: task.title,
         },
         {
@@ -175,11 +156,11 @@ const domModule = {
           classList: ['card-body'],
           textContent: task.description,
         },
-        {
-          element: 'strong',
-          classList: ['card-body'],
-          textContent: task.priority,
-        },
+        // {
+        //  element: 'strong',
+        //  classList: ['card-body'],
+        //  textContent: task.priority,
+        // },
         {
           element: 'small',
           classList: ['card-body'],
@@ -187,8 +168,8 @@ const domModule = {
         },
         {
           element: 'button',
-          classList: ['btn', 'btn-secondary'],
-          textContent: 'Delete Task',
+          classList: ['btn-small', 'btn-danger', 'task-delete'],
+          textContent: 'delete',
           eventListeners: [
             [
               'click',
@@ -198,14 +179,6 @@ const domModule = {
               },
             ],
           ],
-        },
-        {
-          element: 'button',
-          classList: ['btn', 'btn-secondary'],
-          textContent: 'Edit Task',
-          type: 'button',
-          'data-toggle': 'collapse',
-          'data-target': `#edit-form-task-${taskIndex}`,
         },
       ],
     });

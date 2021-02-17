@@ -1,11 +1,8 @@
 import 'bootstrap/js/dist/collapse';
-import './components/style.scss';
+import './components/style.css';
 import Project from './projectconstructor';
-
 import domModule from './dom';
 import { ProjectForm, TaskForm } from './logic';
-
-
 import { updateLocalStorage } from './module';
 
 document.getElementById('submit-task-form-button').addEventListener('click', () => {
