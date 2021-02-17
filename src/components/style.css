@@ -20,3 +20,13 @@
 .h3-p {
   color: #fff;
 }
+
+.card-1 {
+  background-color: brown;
+  display: flex;
+  width: 100vw;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+  align-items: center;
+  color: #fff;
+}

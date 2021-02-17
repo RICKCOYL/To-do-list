@@ -142,7 +142,7 @@ const domModule = {
     const card = createContent({
       element: 'div',
       classList: [
-        'card',
+        'card-1',
         `${task.priority}-priority`,
       ],
       children: [
@@ -156,11 +156,11 @@ const domModule = {
           classList: ['card-body'],
           textContent: task.description,
         },
-        // {
-        //  element: 'strong',
-        //  classList: ['card-body'],
-        //  textContent: task.priority,
-        // },
+        {
+          element: 'strong',
+          classList: ['card-body'],
+          textContent: task.priority,
+        },
         {
           element: 'small',
           classList: ['card-body'],
