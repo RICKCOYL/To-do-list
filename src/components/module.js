@@ -19,16 +19,12 @@ const createContent = (contentObj) => {
     } else {
       switch (key) {
         case 'children':
-          contentObj.children.forEach((element) =>
-            output.appendChild(createContent(element))
-          );
+          contentObj.children.forEach((element) => output.appendChild(createContent(element)));
           break;
         case 'element':
           break;
         case 'classList':
-          contentObj.classList.forEach((element) =>
-            output.classList.add(element)
-          );
+          contentObj.classList.forEach((element) => output.classList.add(element));
           break;
         case 'eventListeners':
           contentObj.eventListeners.forEach((eventListener) => {
