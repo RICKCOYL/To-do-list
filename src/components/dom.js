@@ -13,26 +13,26 @@ const domModule = {
     const projectsList = JSON.parse(localStorage.getItem('projects')) || [];
     const tasksColumn = document.querySelector('.task-list');
     const selectedProjectTasks = JSON.parse(
-      localStorage.getItem('selected project')
+      localStorage.getItem('selected project'),
     ).tasks;
     domModule.populateList(
       projectsColumn,
       projectsList,
-      domModule.displayProject
+      domModule.displayProject,
     );
     domModule.populateList(
       tasksColumn,
       selectedProjectTasks,
-      domModule.displayTask
+      domModule.displayTask,
     );
   },
   deleteProject: (project) => {
     const projectsArray = JSON.parse(localStorage.getItem('projects'));
     const selectedProject = JSON.parse(
-      localStorage.getItem('selected project')
+      localStorage.getItem('selected project'),
     );
     const index = projectsArray.findIndex(
-      (projectElement) => projectElement.title === project.title
+      (projectElement) => projectElement.title === project.title,
     );
 
     if (selectedProject.title === projectsArray[index].title) {
@@ -44,11 +44,10 @@ const domModule = {
   },
   displayProject: (project) => {
     const projectList = JSON.parse(localStorage.getItem('projects'));
-    const selectedProject =
-      JSON.parse(localStorage.getItem('selected project')) || {};
+    const selectedProject = JSON.parse(localStorage.getItem('selected project')) || {};
     const isSelected = selectedProject.title === project.title;
     const uniqueIdentifier = projectList.findIndex(
-      (proj) => proj.title === project.title
+      (proj) => proj.title === project.title,
     );
 
     const card = createContent({
@@ -61,11 +60,11 @@ const domModule = {
             if (!['BUTTON', 'INPUT'].includes(event.target.tagName)) {
               const projects = JSON.parse(localStorage.getItem('projects'));
               const index = projects.findIndex(
-                (element) => project.title === element.title
+                (element) => project.title === element.title,
               );
               localStorage.setItem(
                 'selected project',
-                JSON.stringify(projects[index])
+                JSON.stringify(projects[index]),
               );
               domModule.refreshLists();
             }
@@ -112,15 +111,15 @@ const domModule = {
   },
   deleteTask: (task) => {
     const selectedProject = JSON.parse(
-      localStorage.getItem('selected project')
+      localStorage.getItem('selected project'),
     );
     const projects = JSON.parse(localStorage.getItem('projects'));
     const tasksArray = selectedProject.tasks;
     const index = tasksArray.findIndex(
-      (taskElement) => taskElement.title === task.title
+      (taskElement) => taskElement.title === task.title,
     );
     const projectIndex = projects.findIndex(
-      (projectElement) => projectElement.title === selectedProject.title
+      (projectElement) => projectElement.title === selectedProject.title,
     );
 
     tasksArray.splice(index, 1);
@@ -134,10 +133,10 @@ const domModule = {
   },
   displayTask: (task) => {
     const selectedProjectTaskList = JSON.parse(
-      localStorage.getItem('selected project')
+      localStorage.getItem('selected project'),
     ).tasks;
     const taskIndex = selectedProjectTaskList.findIndex(
-      (element) => element.title === task.title
+      (element) => element.title === task.title,
     );
 
     const card = createContent({
@@ -282,25 +281,25 @@ const domModule = {
               'click',
               () => {
                 const projectList = JSON.parse(
-                  localStorage.getItem('projects')
+                  localStorage.getItem('projects'),
                 );
                 const selectedProj = JSON.parse(
-                  localStorage.getItem('selected project')
+                  localStorage.getItem('selected project'),
                 );
                 const projectIndex = projectList.findIndex(
-                  (proj) => proj.title === selectedProj.title
+                  (proj) => proj.title === selectedProj.title,
                 );
                 const titleInput = document.getElementById(
-                  `edit-task-title-${taskIndex}`
+                  `edit-task-title-${taskIndex}`,
                 );
                 const descriptionInput = document.getElementById(
-                  `edit-task-description-${taskIndex}`
+                  `edit-task-description-${taskIndex}`,
                 );
                 const dueDateInput = document.getElementById(
-                  `edit-task-date-${taskIndex}`
+                  `edit-task-date-${taskIndex}`,
                 );
                 const priorityInput = document.getElementById(
-                  `edit-task-priority-${taskIndex}`
+                  `edit-task-priority-${taskIndex}`,
                 );
 
                 [
@@ -394,20 +393,20 @@ const domModule = {
               'click',
               () => {
                 const projectList = JSON.parse(
-                  localStorage.getItem('projects')
+                  localStorage.getItem('projects'),
                 );
                 const selectedProject = JSON.parse(
-                  localStorage.getItem('selected project')
+                  localStorage.getItem('selected project'),
                 );
 
                 const titleInput = document.getElementById(
-                  `project-${uniqueIdentifier}-input-title`
+                  `project-${uniqueIdentifier}-input-title`,
                 );
                 const descriptionInput = document.getElementById(
-                  `project-${uniqueIdentifier}-input-description`
+                  `project-${uniqueIdentifier}-input-description`,
                 );
                 const dueDateInput = document.getElementById(
-                  `project-${uniqueIdentifier}-input-date`
+                  `project-${uniqueIdentifier}-input-date`,
                 );
 
                 [
@@ -418,7 +417,7 @@ const domModule = {
                   [projectList[uniqueIdentifier], selectedProject].forEach(
                     (proj) => {
                       [, proj[arr[0]]] = arr;
-                    }
+                    },
                   );
                 });
 

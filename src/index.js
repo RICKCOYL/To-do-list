@@ -10,8 +10,7 @@ document
   .addEventListener('click', () => {
     TaskForm();
 
-    const tasksList =
-      JSON.parse(localStorage.getItem('selected project')).tasks || [];
+    const tasksList = JSON.parse(localStorage.getItem('selected project')).tasks || [];
     const tasksColumn = document.querySelector('.task-list');
     domModule.populateList(tasksColumn, tasksList, domModule.displayTask);
     document.getElementById('display-task-form-btn').click();
@@ -27,7 +26,7 @@ document
     domModule.populateList(
       projectsColumn,
       projectsList,
-      domModule.displayProject
+      domModule.displayProject,
     );
     document.getElementById('display-form-btn').click();
   });
