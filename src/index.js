@@ -1,4 +1,4 @@
-import 'bootstrap/js/dist/collapse';
+// import 'bootstrap/js/dist/collapse';
 import './css/style.css';
 import Project from './components/projectconstructor';
 import domModule from './components/dom';

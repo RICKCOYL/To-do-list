@@ -1,4 +1,5 @@
-import 'bootstrap';
+//import 'bootstrap/js/dist/collapse';
+
 import { createContent, updateLocalStorage } from './module';
 
 const domModule = {
