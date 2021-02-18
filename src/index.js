@@ -1,5 +1,5 @@
 import 'bootstrap/js/dist/collapse';
-import './components/style.css';
+import './css/style.css';
 import Project from './components/projectconstructor';
 import domModule from './components/dom';
 import { ProjectForm, TaskForm } from './components/logic';
