@@ -25,13 +25,13 @@ const domModule = {
       domModule.displayTask,
     );
   },
-  deleteProject: (project) => {
+  deleteProject: project => {
     const projectsArray = JSON.parse(localStorage.getItem('projects'));
     const selectedProject = JSON.parse(
       localStorage.getItem('selected project'),
     );
     const index = projectsArray.findIndex(
-      (projectElement) => projectElement.title === project.title,
+      projectElement => projectElement.title === project.title,
     );
 
     if (selectedProject.title === projectsArray[index].title) {
@@ -41,13 +41,11 @@ const domModule = {
     projectsArray.splice(index, 1);
     updateLocalStorage([['projects', JSON.stringify(projectsArray)]]);
   },
-  displayProject: (project) => {
+  displayProject: project => {
     const projectList = JSON.parse(localStorage.getItem('projects'));
     const selectedProject = JSON.parse(localStorage.getItem('selected project')) || {};
     const isSelected = selectedProject.title === project.title;
-    const uniqueIdentifier = projectList.findIndex(
-      (proj) => proj.title === project.title,
-    );
+    const uniqueIdentifier = projectList.findIndex(proj => proj.title === project.title);
 
     const card = createContent({
       element: 'div',
@@ -55,11 +53,13 @@ const domModule = {
       eventListeners: [
         [
           'click',
-          (event) => {
+          event => {
             if (!['BUTTON', 'INPUT'].includes(event.target.tagName)) {
-              const projects = JSON.parse(localStorage.getItem('projects'));
+              const projects = JSON.parse(
+                localStorage.getItem('projects'),
+              );
               const index = projects.findIndex(
-                (element) => project.title === element.title,
+                element => project.title === element.title,
               );
               localStorage.setItem(
                 'selected project',
@@ -108,17 +108,17 @@ const domModule = {
 
     return card;
   },
-  deleteTask: (task) => {
+  deleteTask: task => {
     const selectedProject = JSON.parse(
       localStorage.getItem('selected project'),
     );
     const projects = JSON.parse(localStorage.getItem('projects'));
     const tasksArray = selectedProject.tasks;
     const index = tasksArray.findIndex(
-      (taskElement) => taskElement.title === task.title,
+      taskElement => taskElement.title === task.title,
     );
     const projectIndex = projects.findIndex(
-      (projectElement) => projectElement.title === selectedProject.title,
+      projectElement => projectElement.title === selectedProject.title,
     );
 
     tasksArray.splice(index, 1);
@@ -130,17 +130,20 @@ const domModule = {
       ['projects', JSON.stringify(projects)],
     ]);
   },
-  displayTask: (task) => {
+  displayTask: task => {
     const selectedProjectTaskList = JSON.parse(
       localStorage.getItem('selected project'),
     ).tasks;
     const taskIndex = selectedProjectTaskList.findIndex(
-      (element) => element.title === task.title,
+      element => element.title === task.title,
     );
 
     const card = createContent({
       element: 'div',
-      classList: ['card-1', `${task.priority}-priority`],
+      classList: [
+        'card-1',
+        `${task.priority}-priority`,
+      ],
       children: [
         {
           element: 'h4',
@@ -286,7 +289,7 @@ const domModule = {
                   localStorage.getItem('selected project'),
                 );
                 const projectIndex = projectList.findIndex(
-                  (proj) => proj.title === selectedProj.title,
+                  proj => proj.title === selectedProj.title,
                 );
                 const titleInput = document.getElementById(
                   `edit-task-title-${taskIndex}`,
@@ -306,10 +309,12 @@ const domModule = {
                   ['description', descriptionInput.value],
                   ['dueDate', dueDateInput.value],
                   ['priority', priorityInput.value],
-                ].forEach((arr) => {
-                  [projectList[projectIndex], selectedProj].forEach((proj) => {
-                    [, proj.tasks[taskIndex][arr[0]]] = arr;
-                  });
+                ].forEach(arr => {
+                  [projectList[projectIndex], selectedProj].forEach(
+                    proj => {
+                      [, proj.tasks[taskIndex][arr[0]]] = arr;
+                    },
+                  );
                 });
 
                 updateLocalStorage([
@@ -391,9 +396,7 @@ const domModule = {
             [
               'click',
               () => {
-                const projectList = JSON.parse(
-                  localStorage.getItem('projects'),
-                );
+                const projectList = JSON.parse(localStorage.getItem('projects'));
                 const selectedProject = JSON.parse(
                   localStorage.getItem('selected project'),
                 );
@@ -412,18 +415,18 @@ const domModule = {
                   ['title', titleInput.value],
                   ['description', descriptionInput.value],
                   ['dueDate', dueDateInput.value],
-                ].forEach((arr) => {
-                  [projectList[uniqueIdentifier], selectedProject].forEach(
-                    (proj) => {
-                      [, proj[arr[0]]] = arr;
-                    },
-                  );
+                ].forEach(arr => {
+                  [projectList[uniqueIdentifier], selectedProject].forEach(proj => {
+                    [, proj[arr[0]]] = arr;
+                  });
                 });
 
-                updateLocalStorage([
-                  ['projects', JSON.stringify(projectList)],
-                  ['selected project', JSON.stringify(selectedProject)],
-                ]);
+                updateLocalStorage(
+                  [
+                    ['projects', JSON.stringify(projectList)],
+                    ['selected project', JSON.stringify(selectedProject)],
+                  ],
+                );
                 domModule.refreshLists();
               },
             ],

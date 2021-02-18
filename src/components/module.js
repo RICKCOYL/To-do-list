@@ -4,7 +4,7 @@ const createContent = (contentObj) => {
   }
 
   const output = document.createElement(contentObj.element);
-  Object.keys(contentObj).forEach((key) => {
+  Object.keys(contentObj).forEach(key => {
     if (
       ![
         'element',
@@ -19,15 +19,15 @@ const createContent = (contentObj) => {
     } else {
       switch (key) {
         case 'children':
-          contentObj.children.forEach((element) => output.appendChild(createContent(element)));
+          contentObj.children.forEach(element => output.appendChild(createContent(element)));
           break;
         case 'element':
           break;
         case 'classList':
-          contentObj.classList.forEach((element) => output.classList.add(element));
+          contentObj.classList.forEach(element => output.classList.add(element));
           break;
         case 'eventListeners':
-          contentObj.eventListeners.forEach((eventListener) => {
+          contentObj.eventListeners.forEach(eventListener => {
             output.addEventListener(eventListener[0], eventListener[1]);
           });
           break;
@@ -46,7 +46,7 @@ const createContent = (contentObj) => {
 };
 
 const updateLocalStorage = (newInfoArray) => {
-  newInfoArray.forEach((subArray) => {
+  newInfoArray.forEach(subArray => {
     localStorage.setItem(subArray[0], subArray[1]);
   });
 };
