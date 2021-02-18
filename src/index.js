@@ -29,7 +29,7 @@ const projects = JSON.parse(localStorage.getItem('projects'));
 const selectedProject = JSON.parse(localStorage.getItem('selected-project'));
 
 if (projects === null) {
-  const seedProject = new Project('Default Project', 'This is a project to get you started. Feel free to change the name, description and date!', '01/01/3000');
+  const seedProject = new Project('Default Project');
   updateLocalStorage([
     ['projects', JSON.stringify([seedProject])],
   ]);
