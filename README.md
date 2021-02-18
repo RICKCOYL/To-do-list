@@ -8,9 +8,9 @@
 
 ## App functionality
 
-- Users can add tasks
+- Users can add projects and tasks
 
-## This web app is live, you can check it here: [Live demo](https://oppo737.github.io/To-do-list/dist/index.html)
+## This web app is live, you can check it here: [Live demo](https://rickcoyl.github.io/to-do-list/dist/index.html)
 
 ## Screenshots of the app.
 
