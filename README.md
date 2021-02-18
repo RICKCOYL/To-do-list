@@ -2,7 +2,7 @@
 
 ![Hireable](https://img.shields.io/badge/Hireable-yes-success) ![](https://img.shields.io/badge/-Microverse%20projects-blueviolet)
 
-# Demo restaurant website built for the javascript module.
+# Demo To do list built for the javascript module.
 
 > In this project, we were required to build a restaurant website where users can navigate on the other pages using tab (without redirecting the browser on click).
 
