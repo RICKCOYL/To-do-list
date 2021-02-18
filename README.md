@@ -4,11 +4,11 @@
 
 # Demo To do list built for the javascript module.
 
-> In this project, we were required to build a restaurant website where users can navigate on the other pages using tab (without redirecting the browser on click).
+> In this project, we were required to build a to do list app tha user can can add projects and tasks to.
 
 ## App functionality
 
-- Users can visit the home, menu and contact pages
+- Users can add tasks
 
 ## This web app is live, you can check it here: [Live demo](https://oppo737.github.io/To-do-list/dist/index.html)
 
