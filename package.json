@@ -8,7 +8,13 @@
     "build": "webpack --mode production",
     "build-watch": "webpack --watch --mode production",
     "dev": "webpack --mode development",
-    "start": "webpack --watch --mode=development"
+    "start": "webpack --watch --mode=development",
+    "watch": "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -22,12 +28,13 @@
   },
   "homepage": "https://github.com/RICKCOYL/to-dolist/blob/main/README.md",
   "devDependencies": {
-    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-env": "^7.13.9",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
     "css-loader": "^5.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
